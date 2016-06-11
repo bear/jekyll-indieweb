@@ -1,0 +1,10 @@
+test:
+  override:
+    - ls -la
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - bundle exec jekyll build
+      - bundle exec htmlproofer ./_site --only-4xx --allow-hash-href
